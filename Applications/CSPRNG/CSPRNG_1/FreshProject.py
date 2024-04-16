@@ -9,7 +9,7 @@ city_list = ['bangkok', 'mumbai', 'kolkata', 'tokyo', 'chennai', 'dhaka',
 city = random.choice(city_list)
 
 url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric'
-response = requests.get(url)
+response = requests.get(url, timeout=60)
 
 if response.status_code == 200:
     data = response.json()
