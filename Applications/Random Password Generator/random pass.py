@@ -1,6 +1,6 @@
 from tkinter import *
-import random
 import string
+import secrets
 
 root = Tk()
 root.geometry("400x200")
@@ -14,7 +14,7 @@ def get_pass():
     password = ""
 
     for x in range(pwd_len.get()): #loop to generate the user given length for password
-        password = password + random.choice(pass1)
+        password = password + secrets.choice(pass1)
     passstr.set(password)
 
 #tkinter command to generate the gui    
