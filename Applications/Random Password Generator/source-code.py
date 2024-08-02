@@ -1,14 +1,14 @@
-import random
 from tkinter import *
 import string
 from tkinter.font import Font
+import secrets
 
 def generate_password():
   password=[]
   for i in range(2):
-    alpha=random.choice(string.ascii_letters)
-    symbol=random.choice(string.punctuation)
-    numbers=random.choice(string.digits)
+    alpha=secrets.choice(string.ascii_letters)
+    symbol=secrets.choice(string.punctuation)
+    numbers=secrets.choice(string.digits)
     password.append(alpha)
     password.append(symbol)
     password.append(numbers)
