@@ -1,5 +1,6 @@
-import requests
 import random
+from security import safe_requests
+
 api_key = '194775dc6dd9f7b8f5f0e77f1733a330'
 
 city_list = ['bangkok', 'mumbai', 'kolkata', 'tokyo', 'chennai', 'dhaka', 
@@ -8,7 +9,7 @@ city_list = ['bangkok', 'mumbai', 'kolkata', 'tokyo', 'chennai', 'dhaka',
 city = random.choice(city_list)
 
 url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric'
-response = requests.get(url)
+response = safe_requests.get(url)
 
 if response.status_code == 200:
     data = response.json()
